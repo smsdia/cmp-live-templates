@@ -1,0 +1,34 @@
+<templateSet group="CMP">
+    <template name="comp" value="@Composable&#10;fun $NAME$(&#10;    modifier: Modifier = Modifier,&#10;) {&#10;    $END$&#10;}" description="Compose Multiplatform Composable function" toReformat="true" toShortenFQNames="true">
+        <variable name="NAME" expression="" defaultValue="&quot;Component&quot;" alwaysStopAt="true" />
+        <context>
+            <option name="KOTLIN_TOPLEVEL" value="true" />
+            <option name="KOTLIN_CLASS" value="true" />
+            <option name="KOTLIN_STATEMENT" value="true"/>
+            <option name="KOTLIN_EXPRESSION" value="true"/>
+        </context>
+    </template>
+
+    <template name="prev" value="@Preview&#10;@Composable&#10;private fun $NAME$Preview() {&#10;    $THEME$ {&#10;        $END$&#10;    }&#10;}" description="Compose Multiplatform Preview function" toReformat="true" toShortenFQNames="true">
+        <variable name="NAME" expression="fileNameWithoutExtension()" defaultValue="&quot;Component&quot;" alwaysStopAt="true" />
+        <variable name="THEME" expression="" defaultValue="&quot;MaterialTheme&quot;" alwaysStopAt="true" />
+        <context>
+            <option name="KOTLIN_TOPLEVEL" value="true" />
+        </context>
+    </template>
+
+    <template name="rem" value="val $VAR$ = remember($KEY$) { $END$ }" description="remember block" toReformat="true" toShortenFQNames="true">
+        <variable name="VAR" expression="" defaultValue="&quot;state&quot;" alwaysStopAt="true" />
+        <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="KOTLIN_STATEMENT" value="true" />
+        </context>
+    </template>
+
+    <template name="le" value="LaunchedEffect($KEY$) {&#10;    $END$&#10;}" description="LaunchedEffect block" toReformat="true" toShortenFQNames="true">
+        <variable name="KEY" expression="" defaultValue="&quot;Unit&quot;" alwaysStopAt="true" />
+        <context>
+            <option name="KOTLIN_STATEMENT" value="true" />
+        </context>
+    </template>
+</templateSet>
